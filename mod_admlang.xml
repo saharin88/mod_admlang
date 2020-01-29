@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.9" client="administrator" method="upgrade">
+
+    <name>mod_admlang</name>
+    <creationDate>January 2020</creationDate>
+    <author>Dmytro Sakharuk</author>
+    <authorUrl>http://joom.work</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_ADMLANG_DESC</description>
+
+    <files>
+        <filename module="mod_admlang">mod_admlang.php</filename>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_admlang.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_admlang.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_admlang.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_admlang.sys.ini</language>
+        <language tag="uk-UA">uk-UA/uk-UA.mod_admlang.ini</language>
+        <language tag="uk-UA">uk-UA/uk-UA.mod_admlang.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="MOD_LANGUAGES_FIELD_MODULE_LAYOUT_DESC"
+                />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                        rows="3"
+                />
+
+                <field
+                        name="cache"
+                        type="list"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="MOD_LANGUAGES_FIELD_CACHING_DESC"
+                        default="0"
+                        filter="integer"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="number"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                        default="900"
+                        filter="integer"
+                />
+
+                <field
+                        name="cachemode"
+                        type="hidden"
+                        default="itemid"
+                >
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>
